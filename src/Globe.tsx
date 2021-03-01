@@ -7,7 +7,7 @@ const Globe = () => {
   const texture = useTexture("/earthmap1k.jpg");
   const bumpMap = useTexture("/earthbump1k.jpg");
   const specMap = useTexture("/earthspec1k.jpg");
-  const clouds = useTexture("/clouds.png");
+  const clouds = useTexture("/clouds.webp");
   const earthRef = useRef();
   const cloudRef = useRef();
 
