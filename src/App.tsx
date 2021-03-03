@@ -1,12 +1,21 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import "./App.css";
 import { Canvas } from "react-three-fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import Globe from "./Globe";
+import Mars from "./Mars";
 
 function App() {
+  const [planet, setPlanet] = useState<"earth" | "mars">("earth");
   return (
     <div className="app">
+      <select
+        className="planet-selector"
+        onChange={(e) => setPlanet(e.target.value)}
+      >
+        <option value={"earth"}>Earth</option>
+        <option value={"mars"}>Mars</option>
+      </select>
       <Canvas
         shadowMap
         gl={{ alpha: false }}
@@ -26,7 +35,7 @@ function App() {
         <color attach="background" args={["black"]} />
         <OrbitControls autoRotate={true} autoRotateSpeed={0.2} />
         <Suspense fallback={null}>
-          <Globe />
+          {planet === "earth" ? <Globe /> : <Mars />}
         </Suspense>
       </Canvas>
     </div>
