@@ -12,7 +12,7 @@ const Globe = () => {
   const cloudRef = useRef();
 
   useFrame(() => {
-    if (!earthRef || !cloudRef) return;
+    if (!earthRef.current || !cloudRef.current) return;
     earthRef.current.rotation.y = earthRef.current.rotation.y - 0.002;
     cloudRef.current.rotation.y = cloudRef.current.rotation.y - 0.0005;
     cloudRef.current.rotation.x = cloudRef.current.rotation.x - 0.0005;
