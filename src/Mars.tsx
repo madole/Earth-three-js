@@ -7,7 +7,7 @@ const Mars = () => {
   const marsRef = useRef();
 
   useFrame(() => {
-    if (!marsRef) return;
+    if (!marsRef.current) return;
     // @ts-ignore
     marsRef.current.rotation.y = marsRef.current.rotation.y - 0.002;
   });
