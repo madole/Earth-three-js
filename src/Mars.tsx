@@ -14,7 +14,7 @@ const Mars = () => {
 
   return (
     <>
-      <Sphere args={[0.5, 16, 16]} ref={marsRef}>
+      <Sphere args={[0.25, 32, 32]} ref={marsRef}>
         <meshNormalMaterial bumpMap={bumpMap} bumpScale={0.15} />
       </Sphere>
     </>
